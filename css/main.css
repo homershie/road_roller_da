@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+  font-family: "Arial", sans-serif;
+}
+
+.game {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  cursor: none;
+}
+
+.fist {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.roller {
+  position: absolute;
+  width: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#hp-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 300px;
+  height: 20px;
+  background: #333;
+  border: 2px solid #fff;
+}
+
+#hp-bar {
+  height: 100%;
+  background: red;
+  width: 100%;
+}
+
+#score-board {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 20px;
+}
