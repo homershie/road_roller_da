@@ -1,7 +1,8 @@
 body {
   margin: 0;
   overflow: hidden;
-  background: black;
+  background: url(../images/bg.png) no-repeat center center;
+  background-size: cover;
   font-family: "Arial", sans-serif;
 }
 
@@ -17,6 +18,8 @@ body {
   width: 100px;
   height: auto;
   pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
   z-index: 10;
 }
 
@@ -24,6 +27,19 @@ body {
   position: absolute;
   width: 100px;
   animation: spin 1s linear infinite;
+}
+
+.dio {
+  position: absolute;
+  width: 100px;
+  height: auto;
+}
+
+#start-btn {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 @keyframes spin {
