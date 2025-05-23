@@ -1,6 +1,5 @@
-// Spawns road roller
 function summonDIO() {
-  let randomNum = Math.floor(Math.random() * 100);
+  let randomNum = Math.floor(Math.random() * 30 + 20);
   const dio = document.createElement("img");
   dio.src = "./images/dio.png";
   dio.className = "dio";
@@ -13,44 +12,71 @@ function summonDIO() {
   roller.className = "roller";
   roller.style.left = randomNum + "%";
   roller.style.top = "50%";
+  roller.style.width = "100px";
   game.appendChild(roller);
 
-  let scale = 1;
-  let fall = setInterval(() => {
-    scale += 0.02; // 放大速度可調整
+  // 設定 roller 的 hp
+  roller.dataset.hp = window.gameState.rollerHp;
+
+  // 目標位置（隨機）
+  const targetLeft = Math.random() * 80; // 0~80%
+  const targetTop = Math.random() * 80; // 0~80%
+  let startLeft = randomNum;
+  let startTop = 50;
+
+  let width = 100;
+  let progress = 0; // 0~1
+  let throwInterval = setInterval(() => {
     if (!window.gameState.playing) return;
-    const pos = roller.offsetTop;
-    roller.style.transform = `scale(${scale})`;
+    width += 4;
+    progress += 0.012;
 
-    // 持續放大
-    if (scale < 4) {
-      scale += 0.02; // 放大速度可調整
-    }
+    let currentLeft = startLeft + (targetLeft - startLeft) * progress;
+    let currentTop = startTop + (targetTop - startTop) * progress;
 
-    // If hits bottom
-    if (pos > window.innerHeight - 100) {
-      clearInterval(fall);
-      // 2秒後再移除roller並扣血
-      setTimeout(() => {
-        roller.remove();
-        reduceHealth();
-      }, 2000);
+    roller.style.width = width + "px";
+    roller.style.height = "auto";
+    roller.style.left = currentLeft + "%";
+    roller.style.top = currentTop + "%";
+
+    // 當寬度到達 400 時，扣血並移除
+    if (width >= 400) {
+      clearInterval(throwInterval);
+      roller.remove();
+      dio.remove();
+      reduceHealth();
     }
   }, 30);
 
-  // 過 5 秒後移除
+  // 5 秒後自動移除
   setTimeout(() => {
-    clearInterval(fall);
+    clearInterval(throwInterval);
     roller.remove();
     dio.remove();
   }, 5000);
 
+  // 滑鼠點擊 roller 時，更換圖片
+  roller.addEventListener("mousedown", () => {
+    roller.setAttribute("src", "./images/roadroller_e.png");
+    // 只要 mouseup 就還原
+    const onMouseUp = () => {
+      roller.setAttribute("src", "./images/roadroller.png");
+      document.removeEventListener("mouseup", onMouseUp);
+    };
+    document.addEventListener("mouseup", onMouseUp);
+  });
+
+  // 點擊 roller 扣 hp，hp 歸零才移除
   roller.addEventListener("click", () => {
-    clearInterval(fall);
-    roller.remove();
-    dio.remove();
-    // You can add sound/effects here
+    fist.setAttribute("src", "./images/fist.png");
+    let hp = parseInt(roller.dataset.hp, 10);
+    hp--;
+    roller.dataset.hp = hp;
+    if (hp <= 0) {
+      clearInterval(throwInterval);
+      roller.remove();
+      dio.remove();
+      // 可加分數或特效
+    }
   });
 }
-
-setInterval(summonDIO, 1500);

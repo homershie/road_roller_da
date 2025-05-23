@@ -5,25 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>吃我壓路機！－無限ORA ORA</title>
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="game" class="game">
-      <img id="fist" src="./images/fist.png" class="fist" />
-      <div id="hp-container">
-        <div id="hp-bar"></div>
+    <div id="menu">
+      <div id="title">
+        <img src="./images/logo.png" alt="吃我壓路機！－無限ORA ORA" />
       </div>
-      <div id="score-board">Survive Time: <span id="score">0</span>s</div>
-      <button id="start-btn">開始遊戲</button>
+      <div id="start-button" class="button">START</div>
+      <div id="option-button" class="button">OPTION</div>
+      <div id="option" class="hidden window">
+        <h3>OPTION</h3>
+        <div id="option-easy" class="button">EASY</div>
+        <div id="option-normal" class="button">NORMAL</div>
+        <div id="option-hard" class="button">HARD</div>
+        <div class="btn-close-window">
+          <i class="fa-solid fa-circle-xmark fa-lg"></i>
+        </div>
+      </div>
+      <div id="ranking-button" class="button">RANKING</div>
+      <div id="ranking" class="hidden window">
+        <h3>RANKING</h3>
+        <h4>EASY</h4>
+        <div id="ranking-easy" class="ranking-value">
+          <p id="easy-top-player">Admin</p>
+          <p id="easy-top-score">0</p>
+          <p>pt</p>
+        </div>
+        <h4>NORMAL</h4>
+        <div id="ranking-normal" class="ranking-value">
+          <p id="normal-top-player">Admin</p>
+          <p id="normal-top-score">0</p>
+          <p>pt</p>
+        </div>
+        <h4>HARD</h4>
+        <div id="ranking-hard" class="ranking-value">
+          <p id="hard-top-player">Admin</p>
+          <p id="hard-top-score">0</p>
+          <p>pt</p>
+        </div>
+        <div class="btn-close-window">
+          <i class="fa-solid fa-circle-xmark fa-lg"></i>
+        </div>
+      </div>
+      <div id="credit-button" class="button">CREDIT</div>
+      <div id="credit" class="hidden window">
+        <h3>CREDIT</h3>
+        <p>
+          本作品為個人非商業創作，素材經由 AI 協助生成，<br />概念設計與整體製作由
+          Homer Shie 設計。<br />
+          部分視覺風格致敬《JoJo 的奇妙冒險》（荒木飛呂彥原作）。
+        </p>
+        <p>&nbsp;</p>
+        <p>
+          This is a personal, non-commercial project. <br />Visual assets were
+          AI-assisted and based on the Homer Shie's original concepts and
+          design.<br />
+          Visual style inspired by *JoJo's Bizarre Adventure* by Hirohiko Araki.
+        </p>
+        <div class="btn-close-window">
+          <i class="fa-solid fa-circle-xmark fa-lg"></i>
+        </div>
+      </div>
+    </div>
+    <div id="game" class="game hidden">
+      <img id="fist" src="./images/fist.png" class="fist" />
+      <div id="ui-hp">
+        <div id="hp-text">HP</div>
+        <div id="hp-container">
+          <div id="hp-bar"></div>
+        </div>
+      </div>
+      <div id="ui-game">
+        <div id="score-container">
+          <div id="score-text">Time</div>
+          <div id="score">0</div>
+        </div>
+      </div>
     </div>
 
+    <script
+      src="https://kit.fontawesome.com/1224e48878.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="./js/const.js"></script>
     <script src="./js/game_state.js"></script>
-    <script src="./js/start.js"></script>
     <script src="./js/mouse.js"></script>
     <script src="./js/timer.js"></script>
     <script src="./js/road_roller.js"></script>
-    <script src="./js/reduce_hp.js"></script>
     <script src="./js/game_over.js"></script>
+    <script src="./js/reduce_hp.js"></script>
+    <script src="./js/sweetalert_option.js"></script>
+    <script src="./js/menu.js"></script>
     <script></script>
   </body>
 </html>
