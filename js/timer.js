@@ -8,6 +8,6 @@ setInterval(() => {
     window.gameState.seconds++;
     const min = Math.floor(window.gameState.seconds / 60);
     const sec = window.gameState.seconds % 60;
-    scoreEl.textContent = `${pad(min)}:${pad(sec)}`;
+    timeEl.textContent = `${pad(min)}:${pad(sec)}`;
   }
 }, 1000);

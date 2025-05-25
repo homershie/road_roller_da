@@ -24,11 +24,22 @@ function summonDIO() {
   let startLeft = randomNum;
   let startTop = 50;
 
+  // 難度時間參數
+  let elapsed = (Date.now() - window.gameState.startTime) / 1000; // 秒數
+  // 速度隨著時間增加
+  let speedFactor = 4 + Math.floor(elapsed / 10); // 每10秒加1速度
+  let hpFactor = Math.min(
+    window.gameState.rollerHp + Math.floor(elapsed / 30),
+    10
+  ); // 每30秒+1 HP，最多10
+  // 更新 roller 的 hp
+  roller.dataset.hp = hpFactor;
+
   let width = 100;
   let progress = 0; // 0~1
   let throwInterval = setInterval(() => {
     if (!window.gameState.playing) return;
-    width += 4;
+    width += speedFactor;
     progress += 0.012;
 
     let currentLeft = startLeft + (targetLeft - startLeft) * progress;
@@ -74,6 +85,13 @@ function summonDIO() {
     roller.dataset.hp = hp;
     if (hp <= 0) {
       clearInterval(throwInterval);
+      window.gameState.rollerCount++;
+      window.gameState.score = calculateScore(
+        window.gameState.rollerCount,
+        window.gameState.seconds,
+        window.gameState.difficulty
+      );
+      scoreEl.textContent = formatNumber(window.gameState.score);
       roller.remove();
       dio.remove();
       // 可加分數或特效

@@ -57,7 +57,7 @@ body {
   color: white;
   font-size: 30px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.95);
   border-radius: 50px;
   display: flex;
   justify-content: center;
@@ -71,6 +71,7 @@ body {
   padding: 0;
   letter-spacing: 4px;
   font-size: 40px;
+  color: #dd1212;
 }
 
 .window > .button {
@@ -213,14 +214,17 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
 
-#score-text {
+#score-text,
+#time-text {
   color: #e99c03;
   letter-spacing: 2px;
 }
 
-#score-container {
+#score-container,
+#time-container {
   width: 50%;
   height: auto;
   padding: 5px 10px;

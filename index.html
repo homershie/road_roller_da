@@ -31,24 +31,25 @@
       <div id="ranking-button" class="button">RANKING</div>
       <div id="ranking" class="hidden window">
         <h3>RANKING</h3>
-        <h4>EASY</h4>
-        <div id="ranking-easy" class="ranking-value">
-          <p id="easy-top-player">Admin</p>
-          <p id="easy-top-score">0</p>
+        <h4>1ST PLAYER</h4>
+        <div class="ranking-value">
+          <p id="1ST-player">Jotaro Kujo</p>
+          <p id="1ST-score">0</p>
           <p>pt</p>
         </div>
-        <h4>NORMAL</h4>
-        <div id="ranking-normal" class="ranking-value">
-          <p id="normal-top-player">Admin</p>
-          <p id="normal-top-score">0</p>
+        <h4>2ND PLAYER</h4>
+        <div class="ranking-value">
+          <p id="2ND-player">Jotaro Kujo</p>
+          <p id="2ND-score">0</p>
           <p>pt</p>
         </div>
-        <h4>HARD</h4>
-        <div id="ranking-hard" class="ranking-value">
-          <p id="hard-top-player">Admin</p>
-          <p id="hard-top-score">0</p>
+        <h4>3RD PLAYER</h4>
+        <div class="ranking-value">
+          <p id="3RD-player">Jotaro Kujo</p>
+          <p id="3RD-score">0</p>
           <p>pt</p>
         </div>
+
         <div class="btn-close-window">
           <i class="fa-solid fa-circle-xmark fa-lg"></i>
         </div>
@@ -82,8 +83,12 @@
         </div>
       </div>
       <div id="ui-game">
+        <div id="time-container">
+          <div id="time-text">Time</div>
+          <div id="time">00:00</div>
+        </div>
         <div id="score-container">
-          <div id="score-text">Time</div>
+          <div id="score-text">Score</div>
           <div id="score">0</div>
         </div>
       </div>
@@ -94,13 +99,13 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="./js/number_formatter.js"></script>
     <script src="./js/const.js"></script>
     <script src="./js/game_state.js"></script>
     <script src="./js/mouse.js"></script>
     <script src="./js/timer.js"></script>
     <script src="./js/road_roller.js"></script>
+    <script src="./js/reset_game.js"></script>
     <script src="./js/game_over.js"></script>
     <script src="./js/reduce_hp.js"></script>
     <script src="./js/sweetalert_option.js"></script>

@@ -7,9 +7,25 @@ function handleGameOver() {
     clearInterval(window.rollerInterval);
     window.rollerInterval = null;
   }
+
+  // 先計算分數並存進 gameState
+  window.gameState.score = calculateScore(
+    window.gameState.rollerCount,
+    window.gameState.seconds,
+    window.gameState.difficulty
+  );
+  scoreEl.textContent = formatNumber(window.gameState.score);
+
   const swalOptions = {
     title: "遊戲結束",
-    text: "你存活的時間是 " + window.gameState.score + " ！",
+    text:
+      "你的分數是 " +
+      calculateScore(
+        window.gameState.rollerCount,
+        window.gameState.seconds,
+        window.gameState.difficulty
+      ) +
+      " ！",
     icon: "info",
     iconColor: "#db0007",
     background: "#000",
@@ -18,10 +34,15 @@ function handleGameOver() {
   };
 
   Swal.fire(swalOptions).then(() => {
+    // 取得排行榜
+    const ranking = JSON.parse(localStorage.getItem("ranking") || "[]");
+    // 取得第三名分數（如果還沒三筆，設為0）
+    const thirdScore = ranking[2] ? ranking[2].score : 0;
+
     // 判斷是否破紀錄
     if (
-      typeof window.gameState.topScore === "undefined" ||
-      window.gameState.score > window.gameState.topScore
+      ranking.length < 3 || // 排行榜還沒滿三筆
+      window.gameState.score > thirdScore // 分數高於第三名
     ) {
       Swal.fire({
         title: "新紀錄！",
@@ -31,39 +52,29 @@ function handleGameOver() {
         color: "#000",
         inputPlaceholder: "你的名字",
         confirmButtonText: "儲存",
-        inputAttributes: { maxlength: 8 },
+        inputAttributes: { maxlength: 10 },
         allowOutsideClick: false,
       }).then((result) => {
         window.gameState.topScore = window.gameState.score;
         let name =
           result.isConfirmed && result.value && result.value.trim()
             ? result.value.trim()
-            : "Dr.FAT";
+            : "Jotaro";
         window.gameState.topPlayer = name;
-        // 這裡可根據你的UI更新排行榜
-        // 根據難度選擇對應的排行榜元素
-        let scoreEl, playerEl;
-        switch (window.gameState.difficulty) {
-          case "easy":
-            scoreEl = elTopScoreEasy;
-            playerEl = elTopPlayerEasy;
-            break;
-          case "normal":
-            scoreEl = elTopScoreNormal;
-            playerEl = elTopPlayerNormal;
-            break;
-          case "hard":
-            scoreEl = elTopScoreHard;
-            playerEl = elTopPlayerHard;
-            break;
-        }
-        if (scoreEl) scoreEl.textContent = window.gameState.topScore;
-        if (playerEl) playerEl.textContent = window.gameState.topPlayer;
-        saveGameState();
+        // 新增：加入排行榜
+        addScore(name, window.gameState.score);
+        // 更新排行榜顯示
+        updateRankingDisplay();
+        saveTopScore();
         resetGameData();
+        body.style.background =
+          "url(../images/bg_menu.png) no-repeat top center";
+        body.style.backgroundSize = "cover";
       });
     } else {
       resetGameData();
+      body.style.background = "url(../images/bg_menu.png) no-repeat top center";
+      body.style.backgroundSize = "cover";
     }
   });
 }

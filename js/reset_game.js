@@ -15,10 +15,12 @@ function resetGameData() {
   }
   window.gameState.seconds = 0;
   window.gameState.playing = false;
+  window.gameState.startTime = Date.now();
 
   // 重設 UI
   hpBar.style.width = "100%";
-  scoreEl.textContent = "00:00";
+  timeEl.textContent = "00:00";
+  scoreEl.textContent = "0";
 
   // 清除遊戲區所有壓路機和DIO
   document.querySelectorAll(".roller, .dio").forEach((el) => el.remove());
