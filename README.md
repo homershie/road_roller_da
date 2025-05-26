@@ -5,113 +5,143 @@
 > 他來了——從天而降的壓路機！  
 > 操作承太郎的拳頭，揮出無限 ORA ORA，撐過迪奧的瘋狂轟炸！
 
-> He's here — the road roller from above!  
-> Control Jotaro’s fist, unleash infinite ORA ORA, and survive DIO’s relentless assault!
-
-🎮 **[立即遊玩 DEMO | Play the Demo →](https://homershie.com/road_roller_da/)**
+🎮 **[立即遊玩 DEMO](https://homershie.com/road_roller_da/)**
 
 ---
 
-## 🔧 遊戲特色 | Game Features
+## 🔧 遊戲特色
 
 ### 💥 戰鬥就是這麼單純又殘酷
 
-### 💥 Pure, Brutal Combat
-
-- 迪奧會隨機登場並投擲壓路機  
-  DIO appears randomly and throws road rollers
-- 玩家需操控拳頭擊退壓路機，避免其碰觸畫面邊緣  
-  Use your mouse-controlled fist to knock back incoming rollers
-- 壓路機會持續往你砸，砸到螢幕即會造成傷害  
-  If a roller hits the screen at full size, you take damage
-- 分數依據「擊退數 × 生存時間 × 難度 × 反應速度」計算  
-  Score is based on hits × survival time × difficulty × reaction speed
+- 迪奧會隨機登場並投擲壓路機
+- 玩家需操控拳頭擊退壓路機，避免其碰觸畫面邊緣
+- 壓路機會持續往你砸，砸到螢幕即會造成傷害
+- 分數依據「擊退數 × 生存時間 × 難度 × 反應速度」計算
 
 ### 🖱️ 滑鼠操控 × 拳頭防衛
 
-### 🖱️ Mouse Control × Fist Defense
-
-- 拳頭隨滑鼠移動，擊退壓路機  
-  Move Jotaro’s fist with your mouse to defend
-- UI 顯示血量、時間、分數與重試按鈕  
-  UI displays HP, survival time, score, and retry
-- 每次點擊皆有擊打動畫與聲效回饋  
-  Every hit triggers animation and sound feedback
+- 拳頭隨滑鼠移動，擊退壓路機
+- UI 顯示血量、時間、分數與重試按鈕
+- 每次點擊皆有擊打動畫與聲效回饋
 
 ### 🔄 難度逐步升級
 
-### 🔄 Increasing Difficulty Over Time
-
-- 每 10 秒壓路機速度提升  
-  Every 10 seconds: faster rollers
-- 每 30 秒增加點擊次數需求  
-  Every 30 seconds: rollers become tougher
-- 遊戲節奏隨時間漸漸加快  
-  Game pace intensifies over time
+- 每 10 秒壓路機速度提升
+- 每 30 秒增加點擊次數需求
+- 遊戲節奏隨時間漸漸加快
 
 ---
 
 ## 🧠 本地儲存與排行榜
 
+- 玩家可輸入暱稱，記錄最高得分（localStorage）
+- 排行榜保存裝置內前 3 名紀錄，無需登入也能比拼自己
+- 成績可在遊戲選單中選取 RANKING 查看
+
+---
+
+## 🔊 音效與視覺
+
+- 🎵 BGM：選用 JoJo 處刑曲（Stardust Crusaders OST）
+- 🗣️ 台詞：「ROAD ROLLER DA！」取自動畫原音
+- 🥊 打擊音效取自 Pixabay，按鈕音效由 GPT 合成
+- 🎨 所有圖像素材皆由 GPT 協助生成，忠於 JoJo 誇張漫畫風格
+
+---
+
+## 🛠️ 注意事項
+
+- 本遊戲為粉絲創作，尚在開發中
+- 手機支援尚未實作，建議使用桌機遊玩
+- 部分素材使用第三方資源，僅供非商業展示使用
+
+---
+
+## ❤️ Credits & 資源來源
+
+| 項目           | 說明                                                                  |
+| -------------- | --------------------------------------------------------------------- |
+| 遊戲設計與開發 | Homer Shie                                                            |
+| 視覺圖像       | GPT（AI 圖像生成）                                                    |
+| BGM            | JoJo's Bizarre Adventure: Stardust Crusaders OST - Stardust Crusaders |
+| 台詞音源       | 擷取自動畫原聲配音                                                    |
+| 打擊音效       | 來自 [Pixabay 免費音效庫](https://pixabay.com/sound-effects/)         |
+| 按鈕音效       | 由 GPT 音效工具合成                                                   |
+
+> 本遊戲為非營利粉絲作品，致敬荒木飛呂彥老師與《JoJo 的奇妙冒險》系列。
+
+---
+
+<br>
+
+# 🥊 ROADROLLER'DA ∞ ORAORA INFINITY
+
+> He's here — the road roller from above!  
+> Control Jotaro’s fist, unleash infinite ORA ORA, and survive DIO’s relentless assault!
+
+🎮 **[Play the Demo](https://homershie.com/road_roller_da/)**
+
+---
+
+## 🔧 Game Features
+
+### 💥 Pure, Brutal Combat
+
+- DIO appears randomly and throws road rollers
+- Use your fist to knock them back — don’t let them hit the screen
+- If a roller reaches full size and touches the screen, you take damage
+- Score = Hits × Survival Time × Difficulty × Reaction Speed
+
+### 🖱️ Mouse-Controlled Defense
+
+- Jotaro’s fist follows your mouse — punch them back!
+- UI displays health, survival time, score, and retry button
+- Each hit comes with feedback animation and sound
+
+### 🔄 Scaling Difficulty
+
+- +10 seconds: rollers get faster
+- +30 seconds: more hits required
+- The longer you last, the harder it gets!
+
+---
+
 ## 🧠 Local Storage & Rankings
 
-- 玩家可輸入暱稱，記錄最高得分（localStorage）  
-  Input your name to record high scores (saved locally)
-- 排行榜保存裝置內前 3 名紀錄，無需登入也能比拼自己  
-  Top 3 scores are stored in your browser, no login needed
-- 成績可在遊戲選單中選取 RANKING 查看  
-  Check "RANKING" in the menu to view scores
+- Input your nickname to record your highest score
+- Top 3 scores are saved on your device (localStorage)
+- View rankings in the game’s main menu → **RANKING**
 
 ---
 
-## 🔊 音效與視覺 | Audio & Visuals
+## 🔊 Audio & Visuals
 
-- 🎵 BGM：選用 JoJo 處刑曲（Stardust Crusaders OST）  
-  🎵 BGM: Stardust Crusaders OST (JoJo Execution Theme)
-- 🗣️ 台詞：「ROAD ROLLER DA！」取自動畫原音  
-  🗣️ Quote: “ROAD ROLLER DA!” from anime voice clip
-- 🥊 打擊音效取自 Pixabay，按鈕音效由 GPT 合成  
-  🥊 Hit sounds from Pixabay, menu sounds by GPT generation
-- 🎨 所有圖像素材皆由 GPT 協助生成，忠於 JoJo 誇張漫畫風格  
-  🎨 All visuals AI-generated by GPT in exaggerated JoJo style
+- 🎵 BGM: Execution track from _JoJo's Stardust Crusaders OST_
+- 🗣️ Voice: “ROAD ROLLER DA!” from anime clip
+- 🥊 Hit sound: from Pixabay / Menu sounds generated by GPT
+- 🎨 Art: All visuals created using GPT’s AI image generator — JoJo style!
 
 ---
 
-## 🛠️ 注意事項 | Notes
+## 🛠️ Notes
 
-- 本遊戲為粉絲創作，尚在開發中  
-  This game is a fan-made project, still under development
-- 手機支援尚未實作，建議使用桌機遊玩  
-  Mobile support is not yet available — please use desktop
-- 部分素材使用第三方資源，僅供非商業展示使用  
-  Some assets come from third parties and are used non-commercially
+- This is a fan-made project, currently in development
+- Mobile support not yet available — use desktop for best experience
+- Some assets sourced from third parties, used non-commercially for tribute purposes only
 
 ---
 
-## ❤️ Credits & 資源來源 | Credits & Resources
+## ❤️ Credits & Resources
 
-| 項目           | 說明                                                     | Description                    |
-| -------------- | -------------------------------------------------------- | ------------------------------ |
-| 遊戲設計與開發 | [Homer Shie]                                             | Game Design & Development      |
-| 視覺圖像       | GPT（AI 圖像生成）                                       | Visuals via GPT (AI Image Gen) |
-| BGM            | JoJo's Bizarre Adventure OST - Stardust Crusaders        | BGM from JoJo OST              |
-| 台詞音源       | 擷取自動畫原聲配音                                       | Audio clip from anime          |
-| 打擊音效       | [Pixabay 免費音效庫](https://pixabay.com/sound-effects/) | Sound from Pixabay             |
-| 按鈕音效       | GPT 音效工具合成                                         | GPT-generated UI sounds        |
+| Item       | Description                                                      |
+| ---------- | ---------------------------------------------------------------- |
+| Developer  | Homer Shie                                                       |
+| Visual Art | Generated via GPT (AI image tool)                                |
+| BGM        | JoJo's Bizarre Adventure OST - Stardust Crusaders                |
+| Voice Clip | Extracted from the original anime                                |
+| Hit SFX    | From [Pixabay Sound Library](https://pixabay.com/sound-effects/) |
+| Menu SFX   | Generated by GPT sound tools                                     |
 
-> 本遊戲為非營利粉絲作品，致敬荒木飛呂彥老師與《JoJo 的奇妙冒險》系列。  
-> This is a non-commercial fan project honoring Hirohiko Araki and _JoJo’s Bizarre Adventure_.
-
----
-
-## 📂 遊玩與開發 | Play & Dev Info
-
-- 開發架構：原生 JavaScript + HTML + CSS  
-  Built with: Vanilla JavaScript + HTML + CSS
-- 排行榜與資料儲存：`localStorage`  
-  Rankings saved using `localStorage`
+> This project is a non-commercial fan tribute to Hirohiko Araki and _JoJo’s Bizarre Adventure_.
 
 ---
-
-歡迎拍打測試、挑戰分數極限、分享給其他 JOJO 粉絲！  
-Join the ORA-frenzy, break your high score, and share it with other JoJo fans!
