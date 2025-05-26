@@ -30,14 +30,6 @@ function summonDIO() {
   // 難度時間參數
   let elapsed = (Date.now() - window.gameState.startTime) / 1000; // 秒數
 
-  // 新增：每10秒與30秒提醒
-  if (elapsed > 0 && Math.floor(elapsed) % 30 === 0) {
-    showNotice("壓路機點擊次數+1！", 30);
-  }
-  if (elapsed > 0 && Math.floor(elapsed) % 10 === 0) {
-    showNotice("壓路機飛行速度提升！", 20);
-  }
-
   // 速度隨著時間增加
   let speedFactor = 4 + Math.floor(elapsed / 10); // 每10秒加1速度
   let hpFactor = Math.min(
