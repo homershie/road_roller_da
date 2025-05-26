@@ -26,6 +26,10 @@ startBtn.addEventListener("click", () => {
   hpBar.style.width = "100%";
   scoreEl.textContent = "0";
 
+  // 音效初始化
+  bgm.currentTime = 0;
+  bgm.play();
+
   // 這裡可加遊戲開始的初始化
   if (!window.rollerInterval) {
     window.rollerInterval = setInterval(summonDIO, window.gameState.summonTime);
@@ -50,17 +54,17 @@ optionEasyBtn.addEventListener("click", () => {
 optionNormalBtn.addEventListener("click", () => {
   window.gameState.rollerHp = 2;
   window.gameState.hp = 5;
-  window.gameState.averageReaction = 600;
-  window.gameState.summonTime = 1000;
+  window.gameState.averageReaction = 1000;
+  window.gameState.summonTime = 1200;
   window.gameState.difficulty = "normal";
   alertDifficulty();
 });
 
 optionHardBtn.addEventListener("click", () => {
   window.gameState.rollerHp = 4;
-  window.gameState.hp = 1;
-  window.gameState.averageReaction = 300;
-  window.gameState.summonTime = 600;
+  window.gameState.hp = 2;
+  window.gameState.averageReaction = 1000;
+  window.gameState.summonTime = 800;
   window.gameState.difficulty = "hard";
   alertDifficulty();
 });
@@ -89,3 +93,24 @@ closeWindowBtns.forEach((btn) => {
     }
   });
 });
+
+// 返回選單按鈕
+if (backBtn) {
+  backBtn.addEventListener("mouseover", () => {
+    fist.setAttribute("src", "./images/fist_g.png");
+  });
+  backBtn.addEventListener("mouseout", () => {
+    fist.setAttribute("src", "./images/fist.png");
+  });
+
+  backBtn.addEventListener("click", () => {
+    // 停止壓路機生成
+    if (window.rollerInterval) {
+      clearInterval(window.rollerInterval);
+      window.rollerInterval = null;
+    }
+    resetGameData();
+    body.style.background = "url(./images/bg_menu.png) no-repeat top center";
+    body.style.backgroundSize = "cover";
+  });
+}

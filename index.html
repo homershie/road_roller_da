@@ -32,6 +32,34 @@
         <div id="option-easy" class="button">EASY</div>
         <div id="option-normal" class="button">NORMAL</div>
         <div id="option-hard" class="button">HARD</div>
+        <div class="audio-option">
+          <label>BGM</label>
+          <input
+            type="range"
+            id="bgm-volume"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+          />
+          <div id="bgm-mute">
+            <i class="fa-solid fa-circle-pause"></i>
+          </div>
+        </div>
+        <div class="audio-option">
+          <label>SFX</label>
+          <input
+            type="range"
+            id="sfx-volume"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+          />
+          <div id="sfx-mute">
+            <i class="fa-solid fa-volume-xmark"></i>
+          </div>
+        </div>
         <div class="btn-close-window">
           <i class="fa-solid fa-circle-xmark fa-lg"></i>
         </div>
@@ -57,7 +85,6 @@
           <p id="3RD-score">0</p>
           <p>pt</p>
         </div>
-
         <div class="btn-close-window">
           <i class="fa-solid fa-circle-xmark fa-lg"></i>
         </div>
@@ -100,6 +127,11 @@
           <div id="score">0</div>
         </div>
       </div>
+      <div id="game-btn">
+        <div id="back-btn">
+          <i class="fa-solid fa-arrow-rotate-left"></i>
+        </div>
+      </div>
     </div>
 
     <script
@@ -110,6 +142,7 @@
     <script src="./js/number_formatter.js"></script>
     <script src="./js/const.js"></script>
     <script src="./js/game_state.js"></script>
+    <script src="./js/notice.js"></script>
     <script src="./js/mouse.js"></script>
     <script src="./js/timer.js"></script>
     <script src="./js/road_roller.js"></script>
@@ -118,6 +151,7 @@
     <script src="./js/reduce_hp.js"></script>
     <script src="./js/sweetalert_option.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./js/audio.js"></script>
     <script></script>
   </body>
 </html>

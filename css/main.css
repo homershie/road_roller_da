@@ -95,6 +95,26 @@ body {
   background: rgba(227, 154, 7, 0.3);
 }
 
+.audio-option {
+  width: 300px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.audio-option > label {
+  font-size: 24px;
+  color: white;
+}
+
+#bgm-mute,
+#sfx-mute {
+  cursor: pointer;
+  color: grey;
+  padding: 12px;
+}
 #ranking h4 {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -229,6 +249,43 @@ body {
   height: auto;
   padding: 5px 10px;
   background: rgba(0, 0, 0, 0.8);
+}
+
+#game-btn {
+  position: fixed;
+  top: 7%;
+  right: 2%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 1);
+  padding: 6px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+#back-btn {
+  color: white;
+}
+#back-btn:hover {
+  color: #e99c03;
+}
+
+.notice {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #e99c03;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 20px;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 .hidden {

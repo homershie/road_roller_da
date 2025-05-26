@@ -15,6 +15,9 @@ function summonDIO() {
   roller.style.width = "100px";
   game.appendChild(roller);
 
+  // 播放 DIO 音效
+  dioSfx.currentTime = 0;
+  dioSfx.play();
   // 設定 roller 的 hp
   roller.dataset.hp = window.gameState.rollerHp;
 
@@ -26,6 +29,15 @@ function summonDIO() {
 
   // 難度時間參數
   let elapsed = (Date.now() - window.gameState.startTime) / 1000; // 秒數
+
+  // 新增：每10秒與30秒提醒
+  if (elapsed > 0 && Math.floor(elapsed) % 30 === 0) {
+    showNotice("壓路機點擊次數+1！", 30);
+  }
+  if (elapsed > 0 && Math.floor(elapsed) % 10 === 0) {
+    showNotice("壓路機飛行速度提升！", 20);
+  }
+
   // 速度隨著時間增加
   let speedFactor = 4 + Math.floor(elapsed / 10); // 每10秒加1速度
   let hpFactor = Math.min(
@@ -80,6 +92,11 @@ function summonDIO() {
   // 點擊 roller 扣 hp，hp 歸零才移除
   roller.addEventListener("click", () => {
     fist.setAttribute("src", "./images/fist.png");
+    // 播放打擊音效
+    const hitSfx = hitSfxList[Math.floor(Math.random() * hitSfxList.length)];
+    hitSfx.currentTime = 0;
+    hitSfx.play();
+    // 更新血條
     let hp = parseInt(roller.dataset.hp, 10);
     hp--;
     roller.dataset.hp = hp;
