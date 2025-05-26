@@ -14,7 +14,7 @@ document.addEventListener("mousedown", (e) => {
 // START 按鈕
 startBtn.addEventListener("click", () => {
   // 頁面管理
-  body.style.background = "url(../images/bg_game.png) no-repeat center center";
+  body.style.background = "url(./images/bg_game.png) no-repeat center center";
   body.style.backgroundSize = "cover";
   menu.classList.add("hidden");
   game.classList.remove("hidden");

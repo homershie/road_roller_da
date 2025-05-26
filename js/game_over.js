@@ -68,12 +68,12 @@ function handleGameOver() {
         saveTopScore();
         resetGameData();
         body.style.background =
-          "url(../images/bg_menu.png) no-repeat top center";
+          "url(./images/bg_menu.png) no-repeat top center";
         body.style.backgroundSize = "cover";
       });
     } else {
       resetGameData();
-      body.style.background = "url(../images/bg_menu.png) no-repeat top center";
+      body.style.background = "url(./images/bg_menu.png) no-repeat top center";
       body.style.backgroundSize = "cover";
     }
   });
