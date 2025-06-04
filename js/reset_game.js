@@ -8,7 +8,7 @@ function resetGameData() {
       window.gameState.hp = 5;
       break;
     case "hard":
-      window.gameState.hp = 1;
+      window.gameState.hp = 2;
       break;
     default:
       window.gameState.hp = 5;
