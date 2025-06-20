@@ -1,5 +1,6 @@
 function reduceHealth() {
   window.gameState.hp--;
+  let maxHp;
   switch (window.gameState.difficulty) {
     case "easy":
       maxHp = 10;
@@ -8,10 +9,12 @@ function reduceHealth() {
       maxHp = 5;
       break;
     case "hard":
-      maxHp = 1;
+      maxHp = 2;
       break;
+    default:
+      maxHp = 4;
   }
-  hpBar.style.width = (window.gameState.hp / 4) * 100 + "%";
+  hpBar.style.width = (window.gameState.hp / maxHp) * 100 + "%";
   if (window.gameState.hp <= 0) {
     handleGameOver();
   }

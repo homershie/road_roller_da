@@ -19,7 +19,21 @@ startBtn.addEventListener("click", () => {
   menu.classList.add("hidden");
   game.classList.remove("hidden");
   // 遊戲初始化
-  window.gameState.hp = 4;
+  let maxHp;
+  switch (window.gameState.difficulty) {
+    case "easy":
+      maxHp = 10;
+      break;
+    case "normal":
+      maxHp = 5;
+      break;
+    case "hard":
+      maxHp = 2;
+      break;
+    default:
+      maxHp = 4;
+  }
+  window.gameState.hp = maxHp;
   window.gameState.score = 0;
   window.gameState.playing = true;
   window.gameState.startTime = Date.now();
